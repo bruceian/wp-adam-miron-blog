@@ -24,6 +24,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Adam Miron">
     <meta name="twitter:description" content="Adam Miron's twitter">
+
+    <?php
+      wp_head();
+    ?>
 </head>
   <body>
 

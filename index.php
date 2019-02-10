@@ -30,14 +30,15 @@ get_header();
 
     <div class="article">
       <p><?php the_date('F j Y'); ?></p>
-      <h3><?php the_title(); ?></h3>
 
       <?php if( is_home() ) { ?>
+        <h3><?php the_title(); ?></h3>
         <p><?php the_excerpt(); ?></p>
         <a href="<?php the_permalink() ?>">Read more</a>
       <?php
           } else {
       ?>
+        <h1><?php the_title(); ?></h1>
         <p><?php the_content(); ?></p>
     <?php } ?>
 

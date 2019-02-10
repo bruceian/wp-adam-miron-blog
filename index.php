@@ -16,11 +16,32 @@ get_header();
 		<main id="main" class="site-main">
 
 		<?php
+      if( have_posts() ){
 
+        while( have_posts() ): the_post();
 		?>
+
+    <div class="article">
+      <p><?php the_date('F j Y'); ?></p>
+      <h3><?php the_title(); ?></h3>
+      <p><?php echo break_text( the_content() ); ?></p>
+      <a href="<?php the_permalink() ?>">Read more </a>
+    </div>
+
+    <?php
+        endwhile;
+
+      } else {
+     ?>
+
+
+    <?php
+      }
+    ?>
 
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->
 
 <?php
 get_footer();
+?>

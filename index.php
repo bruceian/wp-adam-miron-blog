@@ -15,6 +15,13 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+    <?php if( is_home() ) {
+
+        get_template_part('partials/home/intro');
+
+          }
+    ?>
+
 		<?php
       if( have_posts() ){
 
@@ -24,8 +31,16 @@ get_header();
     <div class="article">
       <p><?php the_date('F j Y'); ?></p>
       <h3><?php the_title(); ?></h3>
-      <p><?php echo break_text( the_content() ); ?></p>
-      <a href="<?php the_permalink() ?>">Read more </a>
+
+      <?php if( is_home() ) { ?>
+        <p><?php the_excerpt(); ?></p>
+        <a href="<?php the_permalink() ?>">Read more</a>
+      <?php
+          } else {
+      ?>
+        <p><?php the_content(); ?></p>
+    <?php } ?>
+
     </div>
 
     <?php

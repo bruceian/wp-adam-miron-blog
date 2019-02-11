@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Adam Miron">
     <meta name="twitter:description" content="Adam Miron's twitter">
-
+    <link rel="stylesheet" href="https://use.typekit.net/nsh6bgo.css">
     <?php
       wp_head();
     ?>

@@ -5,6 +5,9 @@ body {
   padding: 0;
   font-size: 100%; }
 
+body {
+  background: #e5e1d3; }
+
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
 pre, form, fieldset, input, textarea, p, blockquote, th, td {
   padding: 0;
@@ -42,9 +45,81 @@ a:hover {
   color: #000000;
   text-decoration: none; }
 
+.Neue45Light {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  font-style: normal; }
+
+.Neue46LightItalic {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  font-style: italic; }
+
+.Neue75Bold {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-style: normal; }
+
+.Neue76BoldItalic {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-style: italic; }
+
+.Neue55Roman {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 400;
+  font-style: normal; }
+
+.Neue56Italic {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 400;
+  font-style: italic; }
+
+.Neue65Medium {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 600;
+  font-style: normal; }
+
+.Neue65MediumItalic {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 600;
+  font-style: italic; }
+
+.Neue75Bold {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 700;
+  font-style: normal; }
+
+.Neue76BoldItalic {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 700;
+  font-style: italic; }
+
+body {
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 16px; }
+
 #homeIntro {
   min-height: 100vh;
   position: relative; }
+  #homeIntro h1.big {
+    font-size: 10.5vw;
+    line-height: 1em; }
+  #homeIntro .big-red-a {
+    z-index: -300;
+    position: fixed; }
+    #homeIntro .big-red-a img {
+      width: auto;
+      z-index: -300;
+      height: 100vh;
+      position: fixed;
+      left: -11vw; }
+  #homeIntro .left .text-align-right {
+    padding-right: 1em; }
+  #homeIntro .want-more {
+    padding-top: 1em; }
 
 /* Split the screen in half */
 .split {
@@ -53,7 +128,8 @@ a:hover {
   position: absolute;
   z-index: 1;
   top: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  overflow: hidden; }
 
 /* Control the left side */
 .left {
@@ -62,6 +138,22 @@ a:hover {
 
 /* Control the right side */
 .right {
-  right: 0; }
+  right: 0;
+  background-color: grey; }
 
 /* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.text-align-right {
+  text-align: right; }

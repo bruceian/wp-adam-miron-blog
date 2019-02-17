@@ -14,8 +14,7 @@
 
 
   function adam_miron_blog_setup() {
-    // add_theme_support( $feature, $args,... );
-
+    add_theme_support('post-thumbnails');
   }
 
   add_action('after_setup_theme', 'adam_miron_blog_setup');
@@ -26,6 +25,7 @@
       return '..';
   }
   add_filter('excerpt_more', 'new_excerpt_more');
-  
+
+
 
 ?>

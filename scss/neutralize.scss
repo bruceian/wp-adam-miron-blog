@@ -13,7 +13,7 @@ body {
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
 pre, form, fieldset, input, textarea, p, blockquote, th, td {
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 	}
 fieldset, img {
 	border: 0;
@@ -46,4 +46,7 @@ a,
 a:hover {
   color: #000000;
   text-decoration: none;
+}
+img {
+  max-width: 100%;
 }

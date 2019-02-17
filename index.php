@@ -22,14 +22,14 @@ get_header();
           }
     ?>
 
+<section id="articles_index">
+	<div class="articles">
 		<?php
       if( have_posts() ){
 
         while( have_posts() ): the_post();
 		?>
 
-<section id="articles_index">
-	<div class="articles">
 
 		<div class="article">
 
@@ -53,12 +53,15 @@ get_header();
 				}
 				?>
 				<div class="row">
-					<div class="column _33">
+					<div class="column _33 border-top">
 						<h3 class="title"><?php the_title(); ?></h3>
-						<a href="<?php the_permalink() ?>">Read more</a>
+						<div class="read-more__wrap">
+							<a class="read-more" href="<?php the_permalink() ?>">Read more</a>
+							<svg id="arrow-left-long" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.13 8.18"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;}</style></defs><title>arrow-left-long</title><line class="cls-1" x1="1.08" y1="4.09" x2="57.13" y2="4.09"/><polygon points="4.4 8.18 5.08 7.45 1.47 4.09 5.08 0.73 4.4 0 0 4.09 4.4 8.18"/></svg>
+						</div>
 					</div>
-					<div class="column flex_reverse-desktop _66">
-						<p class="excerpt"><?php the_excerpt(); ?></p>
+					<div class="column flex_reverse-desktop _66 border-top">
+						<?php the_excerpt(); ?>
 					</div>
 				</div>
 				<?php
@@ -83,13 +86,13 @@ get_header();
 
 		</div>
 
-	</div>
-</section>
     <?php
         endwhile;
 
       } else {
      ?>
+	 </div>
+ </section>
 
 
     <?php

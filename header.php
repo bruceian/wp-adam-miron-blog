@@ -31,8 +31,26 @@
 </head>
   <body <?php body_class(); ?>>
 
-    <header>
+    <header id="header">
 
-
+        <nav id="mainNav">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="#" class="Neue95Bold">
+                Adam Miron
+              </a>
+            </li>
+            <li class="nav-list__item Neue45Light ">
+              <a href="#">
+                Bio
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="button">
+                  Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
 
     </header>

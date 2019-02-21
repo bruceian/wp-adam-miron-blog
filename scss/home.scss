@@ -14,12 +14,18 @@ Section Spacing
 #homeIntro {
   min-height: 100vh;
   position: relative;
-
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
   h1 {
 
     &.big {
       font-size: 10.5vw;
       line-height: 1em;
+      @media only screen and (max-width: 768px) {
+        padding-bottom: 0.3em;
+      }
     }
   }
 
@@ -58,20 +64,33 @@ padding-top: 3rem;
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  overflow: hidden
+  overflow: hidden;
 }
 
 /* Control the left side */
 .left {
   left: 0;
   border-right: 1px solid #000000;
-  // background-color: #111;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 2em;
+    width: calc(100% - 30px);
+    position: unset;
+    border: none;
+  }
 }
 
 /* Control the right side */
 .right {
   right: 0;
   background-color: grey;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    position: unset;
+    order: -1;
+    height: 50vh;
+  }
 }
 /* If you want the content centered horizontally and vertically */
 .centered {
@@ -86,12 +105,26 @@ padding-top: 3rem;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+
+  @media only screen and (max-width: 768px) {
+    &.text-align-right {
+      text-align: center;
+      padding-right: 0 !important;
+    }
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 .text-align-right {
   text-align: right;
 }
 .articles {
   width: calc(100% - 60px);
+  @media only screen and (max-width: 768px) {
+    width: calc(100% - 30px);
+  }
 }
 .article_banner {
   padding-bottom: 1em;

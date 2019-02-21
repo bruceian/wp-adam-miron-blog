@@ -131,6 +131,15 @@ body {
   font-style: normal;
   font-size: 16px; }
 
+#bitnami-banner {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important; }
+  #bitnami-banner * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important; }
+
 .border-top {
   border-top: 2px solid #000;
   padding-top: 1em; }
@@ -155,6 +164,9 @@ body {
     width: calc(100% - 60px);
     background: transparent;
     padding: 2em 0; }
+    @media only screen and (max-width: 768px) {
+      #header #mainNav {
+        width: calc(100% - 30px); } }
     #header #mainNav .nav-list {
       display: flex; }
     #header #mainNav .nav-list__item:first-child {
@@ -164,6 +176,10 @@ body {
       margin-left: 0; }
     #header #mainNav .nav-list__item:last-child {
       margin-right: 0; }
+
+@media only screen and (max-width: 768px) {
+  .display-none-768 {
+    display: none; } }
 
 /*
 Section Spacing
@@ -175,9 +191,16 @@ Section Spacing
 #homeIntro {
   min-height: 100vh;
   position: relative; }
+  @media only screen and (max-width: 768px) {
+    #homeIntro {
+      display: flex;
+      flex-direction: column; } }
   #homeIntro h1.big {
     font-size: 10.5vw;
     line-height: 1em; }
+    @media only screen and (max-width: 768px) {
+      #homeIntro h1.big {
+        padding-bottom: 0.3em; } }
   #homeIntro .big-red-a {
     z-index: -300;
     position: fixed; }
@@ -210,11 +233,23 @@ Section Spacing
 .left {
   left: 0;
   border-right: 1px solid #000000; }
+  @media only screen and (max-width: 768px) {
+    .left {
+      padding-top: 2em;
+      width: calc(100% - 30px);
+      position: unset;
+      border: none; } }
 
 /* Control the right side */
 .right {
   right: 0;
   background-color: grey; }
+  @media only screen and (max-width: 768px) {
+    .right {
+      width: 100%;
+      position: unset;
+      order: -1;
+      height: 50vh; } }
 
 /* If you want the content centered horizontally and vertically */
 .centered {
@@ -229,12 +264,24 @@ Section Spacing
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+  @media only screen and (max-width: 768px) {
+    .vertical-center {
+      position: relative;
+      top: 50%;
+      -ms-transform: translateY(0);
+      transform: translateY(0); }
+      .vertical-center.text-align-right {
+        text-align: center;
+        padding-right: 0 !important; } }
 
 .text-align-right {
   text-align: right; }
 
 .articles {
   width: calc(100% - 60px); }
+  @media only screen and (max-width: 768px) {
+    .articles {
+      width: calc(100% - 30px); } }
 
 .article_banner {
   padding-bottom: 1em; }
@@ -283,3 +330,83 @@ Section Spacing
       text-align: right; }
     .article .row .border-top.column:last-child {
       margin-right: 2em; } }
+
+/*
+Post Show Page
+*/
+.post-template-default #header {
+  left: auto;
+  right: 0;
+  width: 50%; }
+  @media only screen and (max-width: 768px) {
+    .post-template-default #header {
+      left: 0;
+      right: auto;
+      width: 100%; } }
+
+.post-template-default .split.left {
+  position: fixed; }
+  @media only screen and (max-width: 768px) {
+    .post-template-default .split.left {
+      left: auto;
+      right: auto;
+      width: 100%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 0;
+      top: 0;
+      overflow-x: hidden;
+      overflow: hidden;
+      border-right: none;
+      max-height: 53vh; } }
+
+.post-template-default #primary {
+  padding-top: 84px;
+  height: auto;
+  width: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  overflow: hidden;
+  right: 0;
+  background-color: transparent; }
+  @media only screen and (max-width: 768px) {
+    .post-template-default #primary {
+      padding-top: 0;
+      position: relative;
+      z-index: 0;
+      top: 0;
+      overflow-x: auto;
+      overflow: auto;
+      width: 100%; } }
+
+.post-template-default .title {
+  font-size: 3.625rem; }
+  @media only screen and (max-width: 768px) {
+    .post-template-default .title {
+      font-size: 2.625rem; } }
+
+.post-template-default .date {
+  text-align: left;
+  font-size: 0.8rem;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.post-template-default .read-more__wrap {
+  padding-top: 4em; }
+
+.post-template-default .read-more {
+  font-size: 1rem;
+  padding-left: 38px; }
+
+@media only screen and (min-width: 800px) {
+  .post-template-default #arrow-left-long {
+    float: left;
+    transform: rotate(0); } }
+
+@media only screen and (max-width: 800px) {
+  .post-template-default #arrow-left-long {
+    float: left;
+    transform: rotate(0); } }

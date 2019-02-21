@@ -8,9 +8,16 @@ Section Spacing
 #homeIntro {
   min-height: 100vh;
   position: relative; }
+  @media only screen and (max-width: 768px) {
+    #homeIntro {
+      display: flex;
+      flex-direction: column; } }
   #homeIntro h1.big {
     font-size: 10.5vw;
     line-height: 1em; }
+    @media only screen and (max-width: 768px) {
+      #homeIntro h1.big {
+        padding-bottom: 0.3em; } }
   #homeIntro .big-red-a {
     z-index: -300;
     position: fixed; }
@@ -43,11 +50,23 @@ Section Spacing
 .left {
   left: 0;
   border-right: 1px solid #000000; }
+  @media only screen and (max-width: 768px) {
+    .left {
+      padding-top: 2em;
+      width: calc(100% - 30px);
+      position: unset;
+      border: none; } }
 
 /* Control the right side */
 .right {
   right: 0;
   background-color: grey; }
+  @media only screen and (max-width: 768px) {
+    .right {
+      width: 100%;
+      position: unset;
+      order: -1;
+      height: 50vh; } }
 
 /* If you want the content centered horizontally and vertically */
 .centered {
@@ -62,12 +81,24 @@ Section Spacing
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+  @media only screen and (max-width: 768px) {
+    .vertical-center {
+      position: relative;
+      top: 50%;
+      -ms-transform: translateY(0);
+      transform: translateY(0); }
+      .vertical-center.text-align-right {
+        text-align: center;
+        padding-right: 0 !important; } }
 
 .text-align-right {
   text-align: right; }
 
 .articles {
   width: calc(100% - 60px); }
+  @media only screen and (max-width: 768px) {
+    .articles {
+      width: calc(100% - 30px); } }
 
 .article_banner {
   padding-bottom: 1em; }

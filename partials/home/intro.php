@@ -5,21 +5,21 @@
       </div>
 
       <div class="split left">
-        
+
         <div class="vertical-center text-align-right">
           <h1 class="Neue75Bold big">Adam Miron</h1>
 
           <h4>
             We could tell you, but we’d rather show you.
-            <br />
+            <br class="display-none-768"/>
             His books. His music. His art. Who inspires
-            <br />
+            <br class="display-none-768"/>
             him, who he follows, what’s in his closet.
-            <br />
+            <br class="display-none-768"/>
             Even what’s in his fridge. Consider this an
-            <br />
+            <br class="display-none-768"/>
             open house - come on it, take a look
-            <br />
+            <br class="display-none-768"/>
             around.
           </h4>
 

@@ -36,17 +36,17 @@
         <nav id="mainNav">
           <ul class="nav-list">
             <li class="nav-list__item">
-              <a href="#" class="Neue95Bold">
+              <a href="<?php echo get_home_url(); ?>" class="Neue95Bold">
                 Adam Miron
               </a>
             </li>
             <li class="nav-list__item Neue45Light ">
-              <a href="#">
+              <a href="<?php echo get_permalink( get_page_by_title( 'BIO' )); ?>">
                 Bio
               </a>
             </li>
             <li class="nav-list__item">
-              <a href="#" class="button">
+              <a href="<?php echo get_permalink( get_page_by_title( 'CONTACT' )); ?>" class="button">
                   Contact
               </a>
             </li>

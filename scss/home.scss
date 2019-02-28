@@ -1,4 +1,126 @@
 .home {
+  .nav-list {
+    .nav-list__item:first-child a {
+      display: none;
+    }
+  }
+  #sidebar-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 35px;
+    padding-left: 30px;
+    z-index: 999;
+    opacity: 0;
+    min-width: 100px;
+
+    ul {
+      display: none;
+      padding-top: 1em;
+    }
+
+    // &:hover {
+    //   height: 100vh;
+    //   background-color: rgba(255, 255, 255, 0.9);
+    // }
+    // &:hover ul {
+    //   display: block;
+    //   padding-right: 30px;
+    // }
+
+    &.active-archive {
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.9);
+
+       ul {
+        display: block;
+        padding-right: 30px;
+      }
+
+      .close {
+        display: block;
+      }
+    }
+
+    .widgettitle {
+      position: relative;
+      color: #000;
+      text-decoration: none;
+      // width: 95%;
+        // &::after {
+        //   content:"";
+        //   background: black;
+        //   position: absolute;
+        //   bottom: 0;
+        //   left: 0;
+        //   height: 2px;
+        //   width: 95%;
+        //   transition: 0.3s;
+        // }
+
+    }
+
+    .close {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      margin-left: 72%;
+      margin-top: -21%;
+      display: none;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          top: 50%;
+          left: 0;
+          margin-top: -1px;
+          background: #000;
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg);
+        }
+    }
+  }
+}
+
+@-webkit-keyframes drawUnderLine {
+  0%   { transform: translateY(0); }
+  25%   { transform: translateY(10px); }
+  50%   { transform: translateY(-10px); }
+  75%   { transform: translateY(5px); }
+  // 85%   { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+@-moz-keyframes drawUnderLine {
+  0%   { transform: translateY(0); }
+  25%   { transform: translateY(10px); }
+  50%   { transform: translateY(-10px); }
+  75%   { transform: translateY(5px); }
+  // 85%   { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+@-o-keyframes drawUnderLine {
+  0%   { transform: translateY(0); }
+  25%   { transform: translateY(10px); }
+  50%   { transform: translateY(-10px); }
+  75%   { transform: translateY(5px); }
+  // 85%   { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+@keyframes drawUnderLine {
+  0%   { transform: translateY(0); }
+  25%   { transform: translateY(10px); }
+  50%   { transform: translateY(-10px); }
+  75%   { transform: translateY(5px); }
+  // 85%   { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
 }
 
 /*
@@ -49,12 +171,48 @@ Section Spacing
 
   .want-more {
     padding-top: 1em;
+
+
+  }
+}
+
+.arrow-down {
+  position: absolute;
+  right: 1em;
+  height: auto;
+  bottom: -12vh;
+  @media only screen and (max-width: 768px) {
+    position: initial;
+    right: 0;
+    height: auto;
+    bottom: 0;
+    display: flex;
+
+    #arrow-left-long{
+      margin: 0 auto;
+      margin-top: 10px;
+      height: 8vh;
+      width: auto;
+    }
+  }
+  a {
+    display: block;
+    width: 100%;
+  }
+  #arrow-left-long {
+    width: 15px;
+    float: none;
+    transform: rotate(0deg) !important;
+    -webkit-animation: drawUnderLine 4s infinite; /* Safari 4+ */
+    -moz-animation:    drawUnderLine 4s infinite; /* Fx 5+ */
+    -o-animation:      drawUnderLine 4s infinite; /* Opera 12+ */
+    animation:         drawUnderLine 4s infinite; /* IE 10+, Fx 29+ */
   }
 }
 
 
 #articles_index {
-padding-top: 3rem;
+  padding-top: 3rem;
 }
 /* Split the screen in half */
 .split {
@@ -84,12 +242,23 @@ padding-top: 3rem;
 .right {
   right: 0;
   background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
     position: unset;
     order: -1;
     height: 50vh;
+  }
+
+  img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
   }
 }
 /* If you want the content centered horizontally and vertically */
@@ -159,9 +328,18 @@ padding-top: 3rem;
   overflow: hidden;
   max-width: 100%;
   max-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 
   img {
     width: -webkit-fill-available;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
 }
 

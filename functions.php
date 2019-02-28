@@ -26,5 +26,20 @@
   }
   add_filter('excerpt_more', 'new_excerpt_more');
 
+  // sidebar
+  function adamn_miron_widget_setup() {
+      register_sidebar( array(
+          'name' => 'Sidebar',
+          'id' => 'sidebar-1',
+          'class' => 'custom',
+          'description' => 'A sidebar',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => "</aside>",
+          'before_title'  => '<h2 class="widgettitle">',
+          'after_title'   => "</h2>",
+        )
+      );
+  }
 
+  add_action('widgets_init', 'adamn_miron_widget_setup');
 ?>

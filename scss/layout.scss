@@ -3,6 +3,15 @@ body {
   font-weight: 100;
   font-style: normal;
   font-size: 16px;
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+#main {
+  min-height: 100vh;
 }
 
 #bitnami-banner {
@@ -72,4 +81,36 @@ body {
   .display-none-768 {
     display: none;
   }
+}
+
+
+#sidebar-1 {
+
+  // .close {
+  //   position: relative;
+  //   display: inline-block;
+  //   width: 30px;
+  //   height: 30px;
+  //   overflow: hidden;
+  //   margin-left: 72%;
+  //   margin-top: -10%;
+  //
+  //     &::before, &::after {
+  //       content: '';
+  //       position: absolute;
+  //       height: 2px;
+  //       width: 100%;
+  //       top: 50%;
+  //       left: 0;
+  //       margin-top: -1px;
+  //       background: #000;
+  //     }
+  //     &::before {
+  //       transform: rotate(45deg);
+  //     }
+  //     &::after {
+  //       transform: rotate(-45deg);
+  //     }
+  // }
+
 }

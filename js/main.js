@@ -1,10 +1,11 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    // console.log( "ready!" );
 
     var $mainNav,
         $homeIntro;
 
         $mainNav = $("#header");
+        $archive = $("#sidebar-1");
         $homeIntro = $("#homeIntro");
 
     /* Every time the window is scrolled ... */
@@ -15,111 +16,46 @@ $( document ).ready(function() {
 
             var bottom_of_object = $(this).position().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
-            console.log( bottom_of_object );
-            console.log( bottom_of_window );
+            // console.log( bottom_of_object );
+            // console.log( bottom_of_window );
             /* If the object is completely visible in the window, fade it it */
             if( bottom_of_window > ( bottom_of_object * 2 ) ){
 
                 $mainNav.animate({'opacity':'1'},400);
-
+                $archive.animate({'opacity':'1'},400);
             }
 
         });
 
     });
 
-    function getNewToken(token) {
-  var action = 'ajaxenquiry';
-  var security =  $('#security').val();
-  $.ajax({
-          type: 'POST',
-          dataType: 'json',
-          url: ajax_auth_object.ajaxurl,
-          data: {
-              'action': action,
-              'security': security,
+    $(".home .widgettitle").mouseenter(function() {
+      $(".home .widgettitle").html("Archive");
+      $archive.addClass("active-archive");
+    });
 
-          },
-          success: function (data) {
-            getCurrentSong(data.token);
-          }
-  });
-}
+    $(".home .widgettitle").click(function() {
+      $(".home .widgettitle").html("Archive");
+      $archive.addClass("active-archive");
+    });
 
-function getCurrentSong(newtoken = null) {
-  // get the token from the option if non is passed
-  var token = (newtoken) ? newtoken : tokenGeneral;
-  // API enpoint
-  var url = 'https://api.spotify.com/v1/me/player/currently-playing';
+    $archive.mouseleave(function() {
+      $(".home .widgettitle").html("Adam Miron");
+      $archive.removeClass("active-archive");
+    });
 
-  // make a GET request to the API
-  $.ajax({
-      url: url,
-      method: "GET",
-      dataType: "json",
-      crossDomain: true,
-      contentType: "application/json; charset=utf-8",
-      cache: false,
-      beforeSend: function (xhr) {
-          xhr.setRequestHeader("Authorization", "Bearer " + token);
-      },
-      success: function (data) {
-          visualise(data);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        getNewToken(token);
-      }
-  });
+    $(".pointy.thick.close").click(function() {
+        $archive.removeClass("active-archive");
+        $(".home .widgettitle").html("Adam Miron");
+    });
 
-}
 
-/**
-* Visualizing SPOTIFY the response into the page
-*
-**/
-function visualise(data) {
-      if(data){
-        let text = (data.is_playing) ? "Listening to." : "The last song I listened to.";
-        let artists = '';
+$('.scroll_to').click(function(e){
+    var jump = $(this).attr('href');
+    var new_position = $(jump).offset();
+    $('html, body').stop().animate({ scrollTop: new_position.top }, 500);
+    e.preventDefault();
+});
 
-        for(let i = 0; i < data.item.artists.length; i++){
-          artists +=  data.item.artists[i].name;
-
-          if(i == data.item.artists.length - 1  ){
-            artists += '.';
-          }
-          else if (i == data.item.artists.length - 2) {
-            artists += ' & ';
-          }
-          else{
-            artists += ', ';
-          }
-        }
-
-        $('#title_spotify').text(artists);
-        $('#album_spotify').text(data.item.name);
-        $('#album_cover').attr('src', data.item.album.images[0].url);
-
-        $('#album_link').removeClass('hidden');
-        $('#title__main_spotify').text(text);
-        $('#album_link').attr('href', data.item.external_urls.spotify);
-      }else{
-        // during ads & when you play music with your phone
-        // the API call does return an empty response
-        let text = "This section is fancy." ;
-        $('#title_spotify').text('Unfortunately Spotify API returned an empty response.');
-        $('#title__main_spotify').text(text);
-        $('#album_spotify').text("Probably I haven't been listening to music for a while.");
-        $('#album_cover').attr('src', 'http://localhost:8888/lebanov/wp-content/themes/wp-ivan/img/no.jpg');
-        $('#album_link').addClass('hidden');
-      }
-
-      $('.spotify').removeClass('hidden');
-
-    }
-    getCurrentSong();
-    setInterval(function() {
-      getCurrentSong();
-    }, 30000);
 
 });

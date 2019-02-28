@@ -3,6 +3,12 @@ body {
   font-weight: 100;
   font-style: normal;
   font-size: 16px; }
+  body * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+#main {
+  min-height: 100vh; }
 
 #bitnami-banner {
   display: none !important;

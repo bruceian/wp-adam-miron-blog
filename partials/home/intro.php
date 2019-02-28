@@ -40,7 +40,7 @@
 
 
       <div class="split right">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/adam-miron-headshot2.png" alt=""/>
+          <img src="https://github.com/bruceian/wp-adam-miron-blog/blob/dev/images/adam-miron-headshot2.png?raw=true" alt=""/>
       </div>
 
       <!-- <div class="arrow-down">

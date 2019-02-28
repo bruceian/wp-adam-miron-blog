@@ -120,6 +120,10 @@ Post Show Page
 
 .archive {
 
+  #articles_index {
+    padding-top: 4rem;
+  }
+
   @media only screen and (max-width: 768px) {
     #articles_index {
       padding-top: 6rem;
@@ -164,6 +168,7 @@ Post Show Page
           order: -1;
           margin-left: 0;
           flex: 3.3;
+          max-width: 130px;
         }
 
         a {

@@ -120,6 +120,12 @@ Post Show Page
 
 .archive {
 
+  @media only screen and (max-width: 768px) {
+    #articles_index {
+      padding-top: 6rem;
+    }
+  }
+
   .split.left {
     position: unset;
     width: 100%;

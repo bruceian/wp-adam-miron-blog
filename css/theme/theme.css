@@ -579,6 +579,10 @@ Post Show Page
 .post-template-default #articles_index {
   padding-top: 6rem; }
 
+@media only screen and (max-width: 768px) {
+  .archive #articles_index {
+    padding-top: 6rem; } }
+
 .archive .split.left {
   position: unset;
   width: 100%;

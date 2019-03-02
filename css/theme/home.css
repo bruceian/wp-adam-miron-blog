@@ -10,6 +10,14 @@
   z-index: 999;
   opacity: 0;
   min-width: 100px; }
+  .home #sidebar-1.black {
+    background-color: #000; }
+    .home #sidebar-1.black * {
+      color: #fff;
+      border-color: #fff; }
+    .home #sidebar-1.black :hover * {
+      color: #000;
+      border-color: #000; }
   .home #sidebar-1 ul {
     display: none;
     padding-top: 1em; }
@@ -23,7 +31,6 @@
       display: block; }
   .home #sidebar-1 .widgettitle {
     position: relative;
-    color: #000;
     text-decoration: none; }
   .home #sidebar-1 .close {
     position: relative;

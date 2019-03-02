@@ -1,0 +1,7 @@
+.spotify-iframe__wrap {
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .spotify-iframe__wrap iframe {
+    width: 100%;
+    background-color: #eee; }

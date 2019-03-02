@@ -46,7 +46,7 @@
               </a>
             </li>
             <li class="nav-list__item">
-              <a href="<?php echo get_permalink( get_page_by_title( 'CONTACT' )); ?>" class="button">
+              <a href="mailto:adam@adammiron.com" class="button">
                   Contact
               </a>
             </li>

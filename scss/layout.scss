@@ -42,6 +42,7 @@ body {
 .home #header {
   opacity: 0;
 }
+
 #header {
   position: fixed;
   top: 0;
@@ -50,6 +51,15 @@ body {
   z-index: 500;
   background-color: rgba(255, 255, 255, 0.3);
   // opacity: 0;
+
+  &.black {
+    background-color: #000;
+
+    * {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
 
   #mainNav {
     width: calc(100% - 60px);

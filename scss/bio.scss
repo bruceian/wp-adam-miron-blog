@@ -1,0 +1,16 @@
+.spotify-iframe__wrap {
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  // width: auto !important;
+  iframe {
+    width: 100%;
+    background-color: #eee;
+  }
+}
+.slick-track {
+  // width: max-content !important;
+}
+.slick-list {
+  // padding: 0 !important;
+}

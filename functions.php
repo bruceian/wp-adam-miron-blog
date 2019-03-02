@@ -1,9 +1,11 @@
 <?php
 
   function adam_miron_blog_script_enqueue() {
+      wp_enqueue_style( 'slickstyle', get_template_directory_uri() . '/js/vendor/slick-1.8.1/slick/slick.css', array(), '1.0.0', 'all' );
+      wp_enqueue_style( 'slickthemestyle', get_template_directory_uri() . '/js/vendor/slick-1.8.1/slick/slick-theme.css', array(), '1.0.0', 'all' );
       wp_enqueue_style( 'adammironstyle', get_template_directory_uri() . '/css/theme/theme.css', array(), '1.0.0', 'all' );
 
-
+      wp_enqueue_script( 'slickjs', get_template_directory_uri() . '/js/vendor/slick-1.8.1/slick/slick.min.js', array(), '1.0.0', true );
       wp_enqueue_script( 'adammironjs', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
   }
 

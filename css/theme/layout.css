@@ -39,6 +39,11 @@ body {
   width: 100%;
   z-index: 500;
   background-color: rgba(255, 255, 255, 0.3); }
+  #header.black {
+    background-color: #000; }
+    #header.black * {
+      color: #fff;
+      border-color: #fff; }
   #header #mainNav {
     width: calc(100% - 60px);
     background: transparent;

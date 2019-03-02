@@ -166,6 +166,11 @@ body {
   width: 100%;
   z-index: 500;
   background-color: rgba(255, 255, 255, 0.3); }
+  #header.black {
+    background-color: #000; }
+    #header.black * {
+      color: #fff;
+      border-color: #fff; }
   #header #mainNav {
     width: calc(100% - 60px);
     background: transparent;
@@ -199,6 +204,14 @@ body {
   z-index: 999;
   opacity: 0;
   min-width: 100px; }
+  .home #sidebar-1.black {
+    background-color: #000; }
+    .home #sidebar-1.black * {
+      color: #fff;
+      border-color: #fff; }
+    .home #sidebar-1.black :hover * {
+      color: #000;
+      border-color: #000; }
   .home #sidebar-1 ul {
     display: none;
     padding-top: 1em; }
@@ -212,7 +225,6 @@ body {
       display: block; }
   .home #sidebar-1 .widgettitle {
     position: relative;
-    color: #000;
     text-decoration: none; }
   .home #sidebar-1 .close {
     position: relative;
@@ -489,24 +501,28 @@ Section Spacing
 /*
 Post Show Page
 */
-.post-template-default #header {
+.post-template-default #header,
+.page-template-page-bio #header {
   left: auto;
   right: 0;
   width: 50%; }
   @media only screen and (max-width: 768px) {
-    .post-template-default #header {
+    .post-template-default #header,
+    .page-template-page-bio #header {
       left: 0;
       right: auto;
       width: 100%; } }
 
-.post-template-default .split.left {
+.post-template-default .split.left,
+.page-template-page-bio .split.left {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden; }
   @media only screen and (max-width: 768px) {
-    .post-template-default .split.left {
+    .post-template-default .split.left,
+    .page-template-page-bio .split.left {
       left: auto;
       right: auto;
       width: 100%;
@@ -519,14 +535,16 @@ Post Show Page
       overflow: hidden;
       border-right: none;
       max-height: 53vh; } }
-  .post-template-default .split.left img {
+  .post-template-default .split.left img,
+  .page-template-page-bio .split.left img {
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
     height: 100vh;
     object-fit: cover; }
 
-.post-template-default #primary {
+.post-template-default #primary,
+.page-template-page-bio #primary {
   padding-top: 84px;
   height: auto;
   width: 50%;
@@ -538,7 +556,8 @@ Post Show Page
   right: 0;
   background-color: transparent; }
   @media only screen and (max-width: 768px) {
-    .post-template-default #primary {
+    .post-template-default #primary,
+    .page-template-page-bio #primary {
       padding-top: 0;
       position: relative;
       z-index: 0;
@@ -547,36 +566,44 @@ Post Show Page
       overflow: auto;
       width: 100%; } }
 
-.post-template-default .title {
+.post-template-default .title,
+.page-template-page-bio .title {
   font-size: 3.625rem; }
   @media only screen and (max-width: 768px) {
-    .post-template-default .title {
+    .post-template-default .title,
+    .page-template-page-bio .title {
       font-size: 2.625rem; } }
 
-.post-template-default .date {
+.post-template-default .date,
+.page-template-page-bio .date {
   text-align: left;
   font-size: 0.8rem;
   padding-top: 1em;
   padding-bottom: 1em; }
 
-.post-template-default .read-more__wrap {
+.post-template-default .read-more__wrap,
+.page-template-page-bio .read-more__wrap {
   padding-top: 4em; }
 
-.post-template-default .read-more {
+.post-template-default .read-more,
+.page-template-page-bio .read-more {
   font-size: 1rem;
   padding-left: 38px; }
 
 @media only screen and (min-width: 800px) {
-  .post-template-default #arrow-left-long {
+  .post-template-default #arrow-left-long,
+  .page-template-page-bio #arrow-left-long {
     float: left;
     transform: rotate(0); } }
 
 @media only screen and (max-width: 800px) {
-  .post-template-default #arrow-left-long {
+  .post-template-default #arrow-left-long,
+  .page-template-page-bio #arrow-left-long {
     float: left;
     transform: rotate(0); } }
 
-.post-template-default #articles_index {
+.post-template-default #articles_index,
+.page-template-page-bio #articles_index {
   padding-top: 6rem; }
 
 .archive #articles_index {
@@ -623,3 +650,11 @@ Post Show Page
 .archive #sidebar-1 {
   position: absolute;
   bottom: 25px; }
+
+.spotify-iframe__wrap {
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .spotify-iframe__wrap iframe {
+    width: 100%;
+    background-color: #eee; }

@@ -40,11 +40,33 @@
                 Adam Miron
               </a>
             </li>
+
             <li class="nav-list__item Neue45Light ">
-              <a href="<?php echo get_permalink( get_page_by_title( 'BIO' )); ?>">
-                Bio
-              </a>
+              <?php
+              $recent_spotify_args = array(
+              	'numberposts' => 1,
+              	'offset' => 0,
+              	'category' => 0,
+              	'orderby' => 'post_date',
+              	'order' => 'DESC',
+              	'include' => '',
+              	'exclude' => '',
+              	'meta_key' => '',
+              	'meta_value' =>'',
+              	'post_type' => 'spotify',
+              	'post_status' => 'publish',
+              	'suppress_filters' => true
+              );
+
+              $recent_posts = wp_get_recent_posts( $recent_spotify_args, ARRAY_A );
+
+              	foreach( $recent_posts as $recent ){
+              		echo '<a href="' . get_permalink($recent["ID"]) . '">' .   "Bio".'</a>';
+              	}
+              	wp_reset_query();
+              ?>
             </li>
+
             <li class="nav-list__item">
               <a href="mailto:adam@adammiron.com" class="button">
                   Contact

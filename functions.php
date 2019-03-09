@@ -44,4 +44,60 @@
   }
 
   add_action('widgets_init', 'adamn_miron_widget_setup');
+
+  // custom post type SPOTIFY
+
+  function spotify_post_type (){
+
+    $labels = array(
+      'name' => 'Spotify',
+      'singular_name' => 'Spotify',
+      'add_new' => 'Add New',
+      'all_items' => 'All Spotify Posts',
+      'add_new_item' => 'Add Post',
+      'edit_item' => 'Edit Item',
+      'new_item' => 'New Item',
+      'view_item' => 'View Item',
+      'search_item' => 'Search Spotify',
+      'not_found' => 'No items found',
+      'not_found_in_trash' => 'No items found in trash',
+      'parent_item_colon' => 'Parent Item'
+    );
+    $args = array(
+      'labels' => $labels,
+      'public' => true,
+      'has_archive' => true,
+      'publicly_queryable' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'hierarchical' => false,
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'revisions'
+      ),
+      'taxonomies' => array(
+        'category',
+        'post_tag'
+      ),
+      'menu_position' => 5,
+      'exclude_from_search' => false
+    );
+
+    register_post_type('spotify', $args);
+  }
+
+  add_action('init', 'spotify_post_type');
+
+
+  // Show posts of 'post', 'page' and 'movie' post types on home page
+function add_my_post_types_to_query( $query ) {
+  if ( is_home() && $query->is_main_query() )
+    $query->set( 'post_type', array( 'post', 'spotify' ) );
+  return $query;
+}
+add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+
 ?>

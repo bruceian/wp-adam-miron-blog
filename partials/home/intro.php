@@ -40,7 +40,7 @@
 
 
       <div class="split right">
-          <img src="https://github.com/bruceian/wp-adam-miron-blog/blob/dev/images/adam-miron-headshot2.png?raw=true" alt=""/>
+          <img class="pixelated" src="https://github.com/bruceian/wp-adam-miron-blog/blob/dev/images/adam-miron-headshot2.png?raw=true" alt=""/>
       </div>
 
       <!-- <div class="arrow-down">

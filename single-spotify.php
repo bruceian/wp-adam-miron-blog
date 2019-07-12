@@ -36,15 +36,36 @@ get_header();
 
       					<?php	if ( is_singular() ) { ?>
 									<div class="carouel-3">
-										<div class="spotify-iframe__wrap">
-											<iframe src="<?php echo get_field("spotify_url_one")?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-										</div>
-										<div class="spotify-iframe__wrap">
-											<iframe src="<?php echo get_field("spotify_url_two")?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-										</div>
-										<div class="spotify-iframe__wrap">
-											<iframe src="<?php echo get_field("spotify_url_three")?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-										</div>
+										<?php if ( get_field("spotify_url_one") ) { ?>
+											<div class="spotify-iframe__wrap">
+												<iframe src="<?php echo get_field("spotify_url_one");?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+											</div>
+										<?php } ?>
+										<?php if ( get_field("spotify_url_two") ) { ?>
+											<div class="spotify-iframe__wrap">
+												<iframe src="<?php echo get_field("spotify_url_two");?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+											</div>
+										<?php } ?>
+										<?php if ( get_field("spotify_url_three") ) { ?>
+											<div class="spotify-iframe__wrap">
+												<iframe src="<?php echo get_field("spotify_url_three");?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+											</div>
+										<?php } ?>
+										<?php if ( get_field("spotify_url_four") ) { ?>
+											<div class="spotify-iframe__wrap">
+												<iframe src="<?php echo get_field("spotify_url_four");?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+											</div>
+										<?php } ?>
+										<?php if ( get_field("spotify_url_five") ) { ?>
+											<div class="spotify-iframe__wrap">
+												<iframe src="<?php echo get_field("spotify_url_five");?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+											</div>
+										<?php } ?>
+										<?php if ( get_field("spotify_url_six") ) { ?>
+											<div class="spotify-iframe__wrap">
+												<iframe src="<?php echo get_field("spotify_url_six");?>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+											</div>
+										<?php } ?>
 									</div>
 									<p class="content"><?php the_content(); ?></p>
       						<div class="read-more__wrap">

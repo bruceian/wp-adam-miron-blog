@@ -64,3 +64,20 @@ body {
 @media only screen and (max-width: 768px) {
   .display-none-768 {
     display: none; } }
+
+.title404 {
+  font-size: 1rem;
+  text-transform: uppercase; }
+  .error404 .title404 {
+    padding-bottom: 1em; }
+
+.return_home {
+  padding-bottom: 1em; }
+  .return_home a {
+    text-decoration: underline; }
+
+.error {
+  font-size: 0.8rem; }
+
+.text-center {
+  text-align: center; }

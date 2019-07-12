@@ -71,7 +71,7 @@ $( document ).ready(function() {
     $('.carouel-3').slick({
       draggable: true,
       autoplay: true, /* this is the new line */
-      autoplaySpeed: 10000,
+      autoplaySpeed: 5000,
       infinite: true,
       slidesToShow: 2,
       slidesToScroll: 2,
@@ -88,30 +88,6 @@ $( document ).ready(function() {
                             }
                           ]
     });
-
-
-    /****************
-    Pull Image From Spotify
-    ****************/
-    //
-    // var spotifyImageDiv,
-    //     spotifyImageURL,
-    //     $halfScreenBioImage;
-    //
-    //     spotifyImageDiv = $(".slick-current iframe #main > div > div > div.ai.au.ah.av > div.ah.aw.ax.ay.az.b0.b1.b2 > div > div");
-    //     spotify = $(".slick-current iframe");
-    //     spotifyArtistNameDiv = $(".slick-current iframe html body #main div div div div div div a span");
-    //
-    //
-    //     var checkExist = setInterval(function() {
-    //        if (spotifyImageDiv.length) {
-    //           console.log("Exists!");
-    //           var bg = spotifyImageDiv.css('background-image');
-    //           spotifyImageURL = bg.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
-    //           console.log(spotifyImageURL);
-    //           clearInterval(checkExist);
-    //        }
-    //     }, 100); // check every 100ms
 
 
 

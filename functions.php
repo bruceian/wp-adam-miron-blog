@@ -94,7 +94,7 @@
 
   // Show posts of 'post', 'page' and 'movie' post types on home page
 function add_my_post_types_to_query( $query ) {
-  if ( is_home() && $query->is_main_query() )
+  if ( is_home() || is_post_type_archive('post') && $query->is_main_query() )
     $query->set( 'post_type', array( 'post', 'spotify' ) );
   return $query;
 }
